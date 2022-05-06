@@ -1,0 +1,13 @@
+<meta charset="UTF-8">
+{% if login == True%}
+
+<h1> 로그인 하였습니다. {{username}}님</h1>
+<a href = {{ url_for ("logout") }}> 로그아웃</a>
+
+{%else %}
+<form method = "get" id = "login" action = {{url_for("login")}}>
+    <input type="email" id="email" name="user_email" placeholder="E-mail">
+    <input type="password" id="passworld" name="user_password" placeholder="password">
+    <button type="submit" class="login">로그인</button>
+</form>
+{%endif%}
